@@ -1,0 +1,31 @@
+<?php
+
+    include_once "Fabrica.php";
+    $Empleado1 = new Empleado("Rodrigo","Balabasquer",40346261,'M',105,172.57);
+    $Empleado2 = new Empleado("Matias","Binevies",40384621,'M',145,87.65);
+    $Empleado3 = new Empleado("Sabrina","Silvero",35784125,'F',99,42.57);*/
+
+    /*echo $Empleado1->ToString()."<br/>";
+    echo $Empleado1->getApellido()."<br/>";
+    echo $Empleado1->getNombre()."<br/>";
+    $dni =$Empleado1->getDni();
+    echo "$dni"."<br/>";
+    echo $Empleado1->getSexo()."<br/>";
+    $legajo =$Empleado1->getLegajo();
+    echo "$legajo"."<br/>";
+    $sueldo =$Empleado1->getSueldo();
+    echo "$sueldo"."<br/>";
+    echo $Empleado1->Hablar("italiano");*/
+
+    $fabrica = new Fabrica("Ioma");
+    $fabrica->AgregarEmpleado($Empleado1);
+    $fabrica->AgregarEmpleado($Empleado2);
+    $fabrica->AgregarEmpleado($Empleado3);
+    echo $fabrica->ToString();
+    $fabrica->EliminarEmpleado($Empleado2);
+    echo $fabrica->ToString();
+    $TOTAL = $fabrica->CalcularSueldos();
+    echo "El sueldo total es de: "."$TOTAL";
+    $fabrica->AgregarEmpleado($Empleado3);
+    echo $fabrica->ToString();
+?>
